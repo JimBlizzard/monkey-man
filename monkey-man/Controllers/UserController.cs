@@ -11,11 +11,18 @@ namespace monkey_man.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {   
-        private UserRepository userRepository;
+        private IUserRepository userRepository;
 
-        public UserController(UserRepository userRepository) 
+        public UserController(IUserRepository userRepository = null) 
         {
-            this.userRepository = userRepository;
+            if (userRepository != null)
+            {
+                this.userRepository = userRepository;
+            }
+            else
+            {
+                this.userRepository = new userRepository();
+            }
         }
 
         [HttpPut]
