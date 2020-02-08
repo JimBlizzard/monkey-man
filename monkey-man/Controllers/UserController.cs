@@ -13,6 +13,11 @@ namespace monkey_man.Controllers
     {   
         private UserRepository userRepository;
 
+        public UserController(UserRepository userRepository) 
+        {
+            this.userRepository = userRepository;
+        }
+
         [HttpPut]
         public bool Put([FromBody] User user) 
         {
