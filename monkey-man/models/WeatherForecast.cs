@@ -1,6 +1,6 @@
 using System;
 
-namespace monkey_man
+namespace monkey_man.Models
 {
     public class WeatherForecast
     {
